@@ -3,7 +3,7 @@
 //Updated by gadotti:
 //  Uses a pt-bt layout keyboard
 //  Change to search for portuguese brazilian windows terms
-//  replace smtp is smtp.gmail.com 
+//  replace smtp is smtp.gmail.com
 //  replace smtp port is 587
 //  replace your-email@gmail.com
 //  replace your-password
